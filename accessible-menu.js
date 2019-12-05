@@ -5,7 +5,8 @@
  * Repo: https://github.com/hotgeart/accessible-menu
  */
 
-$.fn.accessibleMenu = function (options) {
+(function($){
+  $.fn.accessibleMenu = function (options) {
     // Default variable
     var el = "#" + this[0].id; // Element
   
@@ -48,6 +49,7 @@ $.fn.accessibleMenu = function (options) {
         }
       } else if (e.keyCode == "37" || e.keyCode == "38") {
         // ARROW LEFT & UP
+        e.preventDefault();
         focused
           .parent()
           .prev("li")
@@ -55,13 +57,23 @@ $.fn.accessibleMenu = function (options) {
           .focus();
       } else if (e.keyCode == "39" || e.keyCode == "40") {
         // ARROW RIGHT & DOWN
-        focused
-          .parent()
-          .next("li")
-          .children("a, button")
-          .focus();
+        e.preventDefault();
+        if(focused.is('button[aria-expanded="true"]')){
+          focused
+            .next("ul")
+            .children('li:first-child')
+            .children("a, button")
+            .focus();
+        } else {
+          focused
+            .parent()
+            .next("li")
+            .children("a, button")
+            .focus();
+        }
       } else if (e.keyCode == "36") {
         // HOME
+        e.preventDefault();
         focused
           .parent()
           .parent()
@@ -70,6 +82,7 @@ $.fn.accessibleMenu = function (options) {
           .focus();
       } else if (e.keyCode == "35") {
         // END
+        e.preventDefault();
         focused
           .parent()
           .parent()
@@ -155,12 +168,12 @@ $.fn.accessibleMenu = function (options) {
         }
     }
   
-    $(el + ", " + el + " *").blur(function (e) {
+    $(el + ", " + el + " *").focusout(function (e) {
       if (!$(e.relatedTarget).is(el + ", " + el + " *")) {
         accessibleMenuToggler(false);
       }
     });
-  
+
     // polyfill
     if (!String.prototype.repeat) {
       String.prototype.repeat = function (count) {
@@ -201,4 +214,4 @@ $.fn.accessibleMenu = function (options) {
       };
     }
   };
-  
+}(jQuery));
