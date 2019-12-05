@@ -77,10 +77,16 @@
       #my-menu > ul > li {
         display: inline-block;
       }
-      #my-menu > ul > li > a,
-      #my-menu > ul > li > button {
+      #my-menu a,
+      #my-menu button {
         display: block;
+        width: 100%;
         padding: 1rem 2rem;
+        text-align: left;
+      }
+      #my-menu ul li ul li a,
+      #my-menu ul li ul li button {
+        padding: .5rem 1rem;
       }
       #my-menu > ul > li > ul {
         position: absolute;
@@ -88,10 +94,15 @@
       }
       #my-menu ul li ul li {
         display: block;
-        padding: .5rem 1rem;
       }
       #my-menu [id^="sub"]{
         background: #DBDBDB;
+      }
+      #my-menu [id^="sub"] [id^="sub"]{
+        background: #bbb;
+      }
+      #my-menu [id^="sub"] [id^="sub"] a {
+        padding-left: 2rem;
       }
     </style>
   </head>
