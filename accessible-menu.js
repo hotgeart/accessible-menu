@@ -13,7 +13,8 @@
 
       // Defaults settings
       var defaults = {
-        animation: "none"
+        animation: "none",
+        animationSpeed: 'fast'
       };
     
       var settings = $.extend({}, defaults, options);
@@ -142,20 +143,20 @@
         switch (settings.animation) {
           case "fade":
             if(action == 'close') {
-              element.next("ul").fadeOut();
+              element.next("ul").fadeOut(settings.animationSpeed);
             } else if(action == 'open'){
-              element.next("ul").fadeIn();
+              element.next("ul").fadeIn(settings.animationSpeed);
             } else {
-              element.next("ul").fadeToggle();
+              element.next("ul").fadeToggle(settings.animationSpeed);
             }
             break;
           case "slide":
               if(action == 'close') {
-                element.next("ul").slideUp();
+                element.next("ul").slideUp(settings.animationSpeed);
               } else if(action == 'open'){
-                element.next("ul").slideDown();
+                element.next("ul").slideDown(settings.animationSpeed);
               } else {
-                element.next("ul").slideToggle();
+                element.next("ul").slideToggle(settings.animationSpeed);
               }
             break;
           default:

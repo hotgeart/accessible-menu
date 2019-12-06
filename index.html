@@ -20,7 +20,8 @@
         margin-bottom: 2rem;
       }
       h2 {
-        margin: 1rem 0 2rem 0;
+        margin: 0 0 2rem 0;
+        padding: 1rem 0 0 0;
       }
       code {
         max-height: 25rem;
@@ -105,7 +106,7 @@
             <a href="https://www.w3.org/TR/wai-aria-practices/examples/disclosure/disclosure-navigation.html#ex_label">Example Disclosure for Navigation Menus</a>.
           </p>
 
-          <h2>Example with some CSS</h2>
+          <h2>Example with basic CSS</h2>
 
           <nav id="my-menu" aria-label="My menu">
             <ul>
@@ -253,18 +254,57 @@
           <p>JS:</p>
 <pre><code class="js">$("#my-menu").accessibleMenu();</code></pre>
 
-          <p>At the moment there's only one option <code>animation</code>. By default it's <code>none</code>, but there's two others options: <code>fade</code> and <code>slide</code></p>
-
+          <h2>Settings</h2>
+          
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Option</th>
+                <th>Type</th>
+                <th>Default</th>
+                <th>Possibilities</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>animation</td>
+                <td>string</td>
+                <td>none</td>
+                <td>
+                  <p>
+                    <code>fade</code>: Fade(in/out) animation
+                  <br>
+                    <code>slide</code>: Slide(up/down) animation
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>animationSpeed</td>
+                <td>string or int</td>
+                <td>fast</td>
+                <td>
+                  <p>
+                    <code>fast</code>: fast animation
+                  <br>
+                    <code>slow</code>: slow animation
+                  <br>
+                    <code>1000</code>: 1sec animation
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
           
 <pre><code class="js">$("#my-menu").accessibleMenu({
-  animation: 'slide'
+  animation: 'slide',
+  animationSpeed: 300
 });</code></pre>
 
         <h2>Tips</h2>
 
         <ol>
           <li>Always make your <code>a</code> and <code>button</code> in display block</li>
-          <li>Style with <code>[aria-expanded="true|false"]</code> don't override the script to add active class</li>
+          <li>Style with <code>[aria-expanded="true|false"]</code> don't override the script to add an active class</li>
           <li>Use an ID <code>$("#id").accessibleMenu()</code> not a class <code><s>$(".class").accessibleMenu()</s></code></li>
         </ol>
 
@@ -290,7 +330,8 @@
     $( document ).ready(function() {
       hljs.initHighlightingOnLoad();
       $("#my-menu").accessibleMenu({
-        animation: 'slide'
+        animation: 'slide',
+        animationSpeed: 300
       });
     });
     </script>
