@@ -29,19 +29,6 @@
       p {
         margin-bottom: 2rem;
       }
-      #demo-menu > ul {
-        margin-left: 0!important;
-      }
-      #demo-menu ul {
-        list-style-type: none;
-        margin: 0 0 1rem 2rem;
-        padding: 0 0 0 1rem;
-        background: rgba(0, 0, 0, 0.05);
-        border-left: 2px solid rgba(0, 0, 255, 0.5);
-      }
-      #demo-menu ul li {
-        padding: 0.5rem 0;
-      }
       .hljs{display:block;overflow-x:auto;padding:.5em;background:#23241f}.hljs,.hljs-tag,.hljs-subst{color:#f8f8f2}.hljs-strong,.hljs-emphasis{color:#a8a8a2}.hljs-bullet,.hljs-quote,.hljs-number,.hljs-regexp,.hljs-literal,.hljs-link{color:#ae81ff}.hljs-code,.hljs-title,.hljs-section,.hljs-selector-class{color:#a6e22e}.hljs-strong{font-weight:bold}.hljs-emphasis{font-style:italic}.hljs-keyword,.hljs-selector-tag,.hljs-name,.hljs-attr{color:#f92672}.hljs-symbol,.hljs-attribute{color:#66d9ef}.hljs-params,.hljs-class .hljs-title{color:#f8f8f2}.hljs-string,.hljs-type,.hljs-built_in,.hljs-builtin-name,.hljs-selector-id,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-addition,.hljs-variable,.hljs-template-variable{color:#e6db74}.hljs-comment,.hljs-deletion,.hljs-meta{color:#75715e}
       #my-menu {
         margin: 3rem 0;
@@ -118,105 +105,71 @@
             <a href="https://www.w3.org/TR/wai-aria-practices/examples/disclosure/disclosure-navigation.html#ex_label">Example Disclosure for Navigation Menus</a>.
           </p>
 
-          <h2>Raw example:</h2>
-          <nav id="demo-menu" aria-label="Demo Navigation">
+          <h2>Example with some CSS</h2>
+
+          <nav id="my-menu" aria-label="My menu">
             <ul>
               <li>
-                <a href="#">Item 1</a>
+                <a href="#">Link</a>
               </li>
               <li>
-                <button aria-expanded="false" aria-controls="submenu-2">
-                  Item 2
+                <button aria-expanded="false" aria-controls="sub-menu-2">
+                Dropdown
                 </button>
-                <ul id="submenu-2">
+                <ul id="sub-menu-2">
                   <li>
-                    <a href="#">Item 2.1</a>
+                    <a href="#">Link</a>
                   </li>
                   <li>
-                    <a href="#">Item 2.2</a>
+                    <a href="#">Link</a>
                   </li>
                   <li>
-                    <a href="#">Item 2.3</a>
+                    <a href="#">Link</a>
                   </li>
                 </ul>
               </li>
               <li>
-                <button aria-expanded="false" aria-controls="submenu-3">
-                  Item 3
+                <button aria-expanded="false" aria-controls="sub-menu-3">
+                Dropdown
                 </button>
-                <ul id="submenu-3">
+                <ul id="sub-menu-3">
                   <li>
-                    <a href="#">Item 3.1</a>
+                    <a href="#">Link</a>
                   </li>
                   <li>
-                    <button aria-expanded="false" aria-controls="submenu-3-2">
-                      Item 3.2
+                    <button aria-expanded="false" aria-controls="sub-menu-3-2">
+                    Dropdown
                     </button>
-                    <ul id="submenu-3-2">
+                    <ul id="sub-menu-3-2">
                       <li>
-                        <a href="#">Item 3.2.1</a>
+                        <a href="#">Link</a>
                       </li>
                       <li>
-                        <a href="#">Item 3.2.2</a>
-                      </li>
-                      <li>
-                        <a href="#">Item 3.2.3</a>
+                        <a href="#">Link</a>
                       </li>
                     </ul>
                   </li>
                   <li>
-                    <a href="#">Item 3.3</a>
-                  </li>
-                  <li>
-                    <button aria-expanded="false" aria-controls="submenu-3-4">
-                      Item 3.4
-                    </button>
-                    <ul id="submenu-3-4">
-                      <li>
-                        <a href="#">Item 3.4.1</a>
-                      </li>
-                      <li>
-                        <a href="#">Item 3.4.2</a>
-                      </li>
-                      <li>
-                        <button
-                          aria-expanded="false"
-                          aria-controls="submenu-3-4-3"
-                        >
-                          Item 3.4
-                        </button>
-                        <ul id="submenu-3-4-3">
-                          <li>
-                            <a href="#">Item 3.4.3.1</a>
-                          </li>
-                          <li>
-                            <a href="#">Item 3.4.3.2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="#">Item 3.4.4</a>
-                      </li>
-                    </ul>
+                    <a href="#">Link</a>
                   </li>
                 </ul>
               </li>
               <li>
-                <a href="#">Item 4</a>
+                <a href="#">Link</a>
               </li>
               <li>
-                <button aria-expanded="false" aria-controls="submenu-5">
-                  Item 5
+                <button aria-expanded="false" aria-controls="sub-menu-5">
+                Dropdown
                 </button>
-                <ul id="submenu-5">
+                <ul id="sub-menu-5">
                   <li>
-                    <a href="#">Item 5.1</a>
+                    <a href="#">Link</a>
                   </li>
                   <li>
-                    <a href="#">Item 5.2</a>
+                    <a href="#">Link</a>
                   </li>
                   <li>
-                    <a href="#">Item 5.3</a>
+                    <a href="#">Link</a>
                   </li>
                 </ul>
               </li>
@@ -307,82 +260,12 @@
   animation: 'slide'
 });</code></pre>
 
-        <h2>Fully working example with slide and some CSS</h2>
-
-        <nav id="my-menu" aria-label="My menu">
-          <ul>
-            <li>
-              <a href="#">Link</a>
-            </li>
-            <li>
-              <button aria-expanded="false" aria-controls="sub-menu-2">
-              Dropdown
-              </button>
-              <ul id="sub-menu-2">
-                <li>
-                  <a href="#">Link</a>
-                </li>
-                <li>
-                  <a href="#">Link</a>
-                </li>
-                <li>
-                  <a href="#">Link</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <button aria-expanded="false" aria-controls="sub-menu-3">
-              Dropdown
-              </button>
-              <ul id="sub-menu-3">
-                <li>
-                  <a href="#">Link</a>
-                </li>
-                <li>
-                  <button aria-expanded="false" aria-controls="sub-menu-3-2">
-                  Dropdown
-                  </button>
-                  <ul id="sub-menu-3-2">
-                    <li>
-                      <a href="#">Link</a>
-                    </li>
-                    <li>
-                      <a href="#">Link</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="#">Link</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">Link</a>
-            </li>
-            <li>
-              <button aria-expanded="false" aria-controls="sub-menu-5">
-              Dropdown
-              </button>
-              <ul id="sub-menu-5">
-                <li>
-                  <a href="#">Link</a>
-                </li>
-                <li>
-                  <a href="#">Link</a>
-                </li>
-                <li>
-                  <a href="#">Link</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-
         <h2>Tips</h2>
 
         <ol>
           <li>Always make your <code>a</code> and <code>button</code> in display block</li>
           <li>Style with <code>[aria-expanded="true|false"]</code> don't override the script to add active class</li>
+          <li>Use an ID <code>$("#id").accessibleMenu()</code> not a class <code><s>$(".class").accessibleMenu()</s></code></li>
         </ol>
 
         <h2>Browser support</h2>
@@ -402,11 +285,10 @@
     </div>
     <script src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
-    <script src="accessible-menu.js"></script>
+    <script src="accessible-menu.js?20191206"></script>
     <script>
     $( document ).ready(function() {
       hljs.initHighlightingOnLoad();
-      $("#demo-menu").accessibleMenu();
       $("#my-menu").accessibleMenu({
         animation: 'slide'
       });
