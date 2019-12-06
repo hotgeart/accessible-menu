@@ -50,14 +50,24 @@
         padding: 0;
       }
       #my-menu button[aria-expanded="false"]:after {
-        content: "⯆";
+        content: "";
         display: inline-block;
-        color: #333;
+        width: 0; 
+        height: 0; 
+        border-left: 0.3125rem solid transparent;
+        border-right: 0.3125rem solid transparent;
+        border-top: 0.3125rem solid #333;
       }
       #my-menu button[aria-expanded="true"]:after {
-        content: "⯅";
+        content: "";
         display: inline-block;
-        color: #333;
+        position: relative;
+        top: -0.1875rem;
+        width: 0; 
+        height: 0; 
+        border-left: 0.3125rem solid transparent;
+        border-right: 0.3125rem solid transparent;
+        border-bottom: 0.3125rem solid #333;
       }
       #my-menu ul {
         background: #efefef;
