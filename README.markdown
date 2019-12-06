@@ -13,4 +13,4 @@ https://hotgeart.github.io/accessible-menu/
     $("#my-menu").accessibleMenu();
 ```
 
-![ez](https://media.giphy.com/media/3o7btNa0RUYa5E7iiQ/giphy.gif)
+![ez](ez.gif)
