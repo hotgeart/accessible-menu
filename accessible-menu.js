@@ -7,9 +7,9 @@
 
 (function($){
   $.fn.accessibleMenu = function (options) {    
-    if (this.length) {
+    this.each(function() {
       // Default variable
-      var el = "#" + this[0].id; // Element
+      var el = "#" + this.id;
 
       // Defaults settings
       var defaults = {
@@ -32,7 +32,7 @@
       });
     
       // Handle keyboard
-      this.keydown(function (e) {
+      $(this).keydown(function (e) {
         e = e || window.event;
         var focused = $(":focus");
     
@@ -175,7 +175,7 @@
           accessibleMenuToggler(false);
         }
       });
-    }
+    });
 
     // polyfill
     if (!String.prototype.repeat) {
